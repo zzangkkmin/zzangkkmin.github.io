@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
-title: Computer-Science
-slug: comsci
+title: OperationSystem
+slug: os
 category: comsci
 menu: false
 order: 1
