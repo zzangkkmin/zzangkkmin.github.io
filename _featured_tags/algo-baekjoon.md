@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: DL
-slug: dl
-category: dev
+title: baekjoon
+slug: baekjoon
+category: algo
 menu: false
 order: 2
 ---

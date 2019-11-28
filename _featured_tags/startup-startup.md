@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: Startup
-slug: startup
-category: startup
+title: Web-Programming
+slug: web
+category: web
 menu: false
 order: 1
 ---
