@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: Review
-slug: review
-category: review
+title: Job
+slug: job
+category: job
 menu: false
 order: 1
 ---
