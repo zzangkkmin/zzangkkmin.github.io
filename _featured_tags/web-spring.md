@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
-title: Web-Programming
-slug: web
+title: Spring
+slug: spring
 category: web
 menu: false
 order: 1
