@@ -14,7 +14,7 @@ comments: true
 일단은 어떻게 올릴지에 대해서 다시 연구해봅니다...
 
 ## 관리 방법
-![구성요소](https://zzangkkmin.github.io/assets/postImages/2024-08-02-think-blogRule-01.png)  
+![구성요소](https://zzangkkmin.github.io/assets/img/postImages/2024-08-02-think-blogRule-01.png)  
 github 블로그 답게 git과 연동하여 작성하고 올리면 되며, 올릴 컨텐츠는 크게 ```_featured_catagories```, ```_featured_tags```, 그리고 ```posts```에 올립니다.  
 블로그 작성 시 카테고리 먼저 정하고, 그 다음 태그를 정한 다음에, 본문을 작성하면 됩니다. 각각의 작성 요소는 아래에 설명합니다.
 그 외 필요한 이미지나, 첨부파일은 ```posts```에 올립니다.
