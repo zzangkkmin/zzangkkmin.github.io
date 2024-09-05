@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: Spring
-slug: spring
+title: JPA
+slug: jpa
 category: web
 menu: false
-order: 2
+order: 3
 ---
