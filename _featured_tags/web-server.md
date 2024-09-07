@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
-title: GitBlog
-slug: git
+title: Server
+slug: server
 category: web
 menu: false
 order: 1
