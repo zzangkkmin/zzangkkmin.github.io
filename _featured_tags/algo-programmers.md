@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: Basic
-slug: basic
+title: Programmers
+slug: programmers
 category: algo
 menu: false
-order: 1
+order: 2
 ---
