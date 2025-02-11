@@ -19,7 +19,7 @@ comments: true
 - 관심 종목에 대한 키워드 분석과 감정 분석을 하여 해당 주식에 대한 뉴스를 긍정/중립/부정으로 평가하여 보여주는 기능
 - 주식 정보와 주요 지표를 보여주고, 관심 종목에 대한 커뮤니티를 형성하여 의견을 나눌 수 있는 기능
 
-자세한 것은 https://github.com/27kdt3team/team3 에서 확인할 수 있다.
+자세한 것은 [https://github.com/27kdt3team/team3](https://github.com/27kdt3team/team3) 에서 확인할 수 있다.
 
 ## 잘한 것 & 배운 것
 - **팀장으로서 GIT 관리**  
