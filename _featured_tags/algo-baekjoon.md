@@ -4,5 +4,5 @@ title: baekjoon
 slug: baekjoon
 category: algo
 menu: false
-order: 2
+order: 1
 ---
