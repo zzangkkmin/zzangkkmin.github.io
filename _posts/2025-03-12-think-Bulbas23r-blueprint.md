@@ -44,10 +44,12 @@ comments: true
 
 ## DB 테이블
 
+테이블 노션 페이지 : [https://www.notion.so/teamsparta/1b32dc3ef5148090bef4d2a9e98d3343?pvs=4](https://www.notion.so/teamsparta/1b32dc3ef5148090bef4d2a9e98d3343?pvs=4)  
+
 ### p_user: 사용자 테이블
 
 | 컬럼 ID    | 컬럼 설명  | 타입 및 길이   | Not null | PK | Unique | 기본값  | 제약조건   |
-|------------|-----------|----------------|----------|---|--------|---------|------=----|
+|------------|-----------|----------------|----------|---|--------|---------|-----------|
 | id         | 사용자 고유 값    | UUID           | Y   | Y           | Y      |         | 
 | username   | 사용자 아이디 이름 | VARCHAR(10)    | Y   |             | Y      |         |  
 | password   | 사용자 비밀번호    | VARCHAR(15)    | Y   |             |        |         | 
@@ -168,12 +170,12 @@ comments: true
 | provide_company_id    | 공급 업체 아이디        | UUID          | Y        |    | Y      |        |          |
 | recieve_company_id    | 수령 업체 아이디        | UUID          | Y        |    | Y      |         |          |
 | created_at            | 레코드 생성 시간        | TIMESTAMP     | Y        |    |        | NOW()  |          |
-| created_by            | 레코드 생성자 | VARCHAR(100)  | Y        |    | Y      | username |        |
+| created_by            | 레코드 생성자           | VARCHAR(100)  | Y        |    | Y      | username |        |
 | updated_at            | 레코드 수정 시간        | TIMESTAMP     | Y        |    |        |  NOW()  |          |
-| updated_by            | 레코드 수정자 | VARCHAR(100)  | Y        |    |        | username |        |
+| updated_by            | 레코드 수정자           | VARCHAR(100)  | Y        |    |        | username |        |
 | is_deleted            | 레코드 삭제 여부        | BOOLEAN       | Y        |    |        |  false  |          |
 | deleted_at            | 레코드 삭제 시간        | TIMESTAMP     |          |    |        |          |          |
-| deleted_by            | 레코드 삭제자 | VARCHAR(100)  |          |    |        |         |          |
+| deleted_by            | 레코드 삭제자           | VARCHAR(100)  |          |    |        |         |          |
 
 
 ### p_order_product: 주문 상세조회 테이블
@@ -188,58 +190,58 @@ comments: true
 | quantity     | 수량                          | INT            | Y        |   |        |         |          |
 | price        | 가격                          | DECIMAL(10,2)  | Y        |   |        |         |          |
 | created_at   | 레코드 생성 시간              | TIMESTAMP      | Y         |   |        |  now()  |          |
-| created_by   | 레코드 생성자       | VARCHAR(50)    | Y        |    |        | username |         |
+| created_by   | 레코드 생성자                 | VARCHAR(50)    | Y        |    |        | username |         |
 | updated_at   | 레코드 수정 시간              | TIMESTAMP      | Y        |    |        |   now()  |         |
-| updated_by   | 레코드 수정자       | VARCHAR(50)    | Y        |   |        | username |         |
+| updated_by   | 레코드 수정자                 | VARCHAR(50)    | Y        |   |        | username |         |
 | is_deleted   | 레코드 삭제 여부              | BOOLEAN        | Y        |   |        |  false  |          |
 | deleted_at   | 레코드 삭제 시간              | TIMESTAMP      |          |   |        |         |          |
-| deleted_by   | 레코드 삭제자       | VARCHAR(50)    |          |   |        |         |          |
+| deleted_by   | 레코드 삭제자                 | VARCHAR(50)    |          |   |        |         |          |
 
 
 ### p_delivery: 배송 테이블
 
-| 컬럼 ID               | 컬럼 설명                    | 타입 및 길이 | Not null | PK | Unique | 기본값 | 제약조건 |
-|-----------------------|------------------------------|--------------|----------|-------------|--------|--------|----------|
-| id                    | 배송 ID                      | UUID         | Y        | Y           | Y      |        |          |
-| order_id              | 주문 ID                      | UUID         | Y        |             |        |        |          |
-| start_hub_id          | 출발 허브 ID                 | UUID         | Y        |             |        |        |          |
-| end_hub_id            | 도착 허브 ID                 | UUID         | Y        |             |        |        |          |
-| deliver_manager_id    | 업체 배송 담당자 ID          | UUID         | Y        |             |        |        |          |
-| status                | 상태                         | ENUM         | Y        |             |        |        |          |
-| receiver_company_id   | 수령 업체 ID                 | UUID         | Y        |             |        |        |          |
-| receiver_company_slack_id | 수령 업체 슬랙 ID         | UUID         |          |             |        |        |          |
-| created_at            | 레코드 생성 시간             | TIMESTAMP    | Y        |             |        | NOW()  |          |
-| created_by            | 레코드 생성자      | VARCHAR(50)  | Y        |             |        | username |        |
-| updated_at            | 레코드 수정 시간             | TIMESTAMP    | Y        |             |        | NOW()  |          |
-| updated_by            | 레코드 수정자      | VARCHAR(50)  | Y        |             |        | username |        |
-| is_deleted            | 레코드 삭제 여부             | BOOLEAN      | Y        |             |        | FALSE  |          |
-| deleted_at            | 레코드 삭제 시간             | TIMESTAMP    |          |             |        |        |          |
-| deleted_by            | 레코드 삭제자      | VARCHAR(50)  |          |             |        |        |          |
+| 컬럼 ID               | 컬럼 설명                    | 타입 및 길이 | Not null | PK | Unique | 기본값 | 
+|-----------------------|------------------------------|--------------|----------|-------------|--------|--------|
+| id                    | 배송 ID                      | UUID         | Y        | Y           | Y      |        | 
+| order_id              | 주문 ID                      | UUID         | Y        |             |        |        | 
+| start_hub_id          | 출발 허브 ID                 | UUID         | Y        |             |        |        | 
+| end_hub_id            | 도착 허브 ID                 | UUID         | Y        |             |        |        | 
+| deliver_manager_id    | 업체 배송 담당자 ID          | UUID         | Y        |             |        |        | 
+| status                | 상태                         | ENUM         | Y        |             |        |        | 
+| receiver_company_id   | 수령 업체 ID                 | UUID         | Y        |             |        |        |  
+| receiver_company_slack_id | 수령 업체 슬랙 ID         | UUID         |          |             |        |        |  
+| created_at            | 레코드 생성 시간             | TIMESTAMP    | Y        |             |        | NOW()  |   
+| created_by            | 레코드 생성자                 | VARCHAR(50)  | Y        |             |        | username |
+| updated_at            | 레코드 수정 시간             | TIMESTAMP    | Y        |             |        | NOW()  | 
+| updated_by            | 레코드 수정자                | VARCHAR(50)  | Y        |             |        | username |
+| is_deleted            | 레코드 삭제 여부             | BOOLEAN      | Y        |             |        | FALSE  |
+| deleted_at            | 레코드 삭제 시간             | TIMESTAMP    |          |             |        |        | 
+| deleted_by            | 레코드 삭제자                | VARCHAR(50)  |          |             |        |        |  
 
 
 ### p_delivery_path: 배송 경로 테이블
 
-| 컬럼 ID               | 컬럼 설명                         | 타입 및 길이 | Not null | PK | Unique | 기본값 | 제약조건 |
-|-----------------------|-----------------------------------|--------------|----------|-------------|--------|--------|----------|
-| id                    | 배송 경로 ID                      | UUID         | Y        | Y           |        |        |          |
-| delivery_id           | 배송 ID                           | UUID         | Y        |             |        |        |          |
-| hub_transit_info_id   | 허브 간 이동 정보 ID               | UUID         | Y        |             |        |        |          |
-| start_hub_id          | 출발 허브 ID                      | UUID         | Y        |             |        |        |          |
-| end_hub_id            | 도착 허브 ID                      | UUID         | Y        |             |        |        |          |
-| delivery_manager_id   | 허브 배송 담당자 ID               | UUID         | Y        |             |        |        |          |
-| status                | 상태                              | ENUM         | Y        |             |        |        |          |
-| sequence              | 허브의 순번                       | NUMERIC      | Y        |             |        |        |          |
-| estimated_distance    | 예상 거리                         | NUMERIC      |          |             |        |        |          |
-| estimated_duration    | 예상 소요 시간                    | INTERVAL     |          |             |        |        |          |
-| actual_distance       | 실제 거리                         | NUMERIC      |          |             |        |        |          |
-| actual_duration       | 실제 소요 시간                    | INTERVAL     |          |             |        |        |          |
-| created_at            | 레코드 생성 시간                  | TIMESTAMP    | Y        |             |        | NOW()  |          |
-| created_by            | 레코드 생성자           | VARCHAR(50)  | Y        |             |        | username |        |
-| updated_at            | 레코드 수정 시간                  | TIMESTAMP    | Y        |             |        | NOW()  |          |
-| updated_by            | 레코드 수정자           | VARCHAR(50)  | Y        |             |        | username |        |
-| is_deleted            | 레코드 삭제 여부                  | BOOLEAN      | Y        |             |        | FALSE  |          |
-| deleted_at            | 레코드 삭제 시간                  | TIMESTAMP    |          |             |        |        |          |
-| deleted_by            | 레코드 삭제자           | VARCHAR(50)  |          |             |        |        |          |
+| 컬럼 ID               | 컬럼 설명                         | 타입 및 길이 | Not null | PK | Unique | 기본값 | 
+|-----------------------|-----------------------------------|--------------|----------|-------------|--------|--------|
+| id                    | 배송 경로 ID                      | UUID         | Y        | Y           |        |        |  
+| delivery_id           | 배송 ID                           | UUID         | Y        |             |        |        |   
+| hub_transit_info_id   | 허브 간 이동 정보 ID               | UUID         | Y        |             |        |        |  
+| start_hub_id          | 출발 허브 ID                      | UUID         | Y        |             |        |        |   
+| end_hub_id            | 도착 허브 ID                      | UUID         | Y        |             |        |        | 
+| delivery_manager_id   | 허브 배송 담당자 ID               | UUID         | Y        |             |        |        |  
+| status                | 상태                              | ENUM         | Y        |             |        |        |  
+| sequence              | 허브의 순번                       | NUMERIC      | Y        |             |        |        | 
+| estimated_distance    | 예상 거리                         | NUMERIC      |          |             |        |        |  
+| estimated_duration    | 예상 소요 시간                    | INTERVAL     |          |             |        |        | 
+| actual_distance       | 실제 거리                         | NUMERIC      |          |             |        |        |  
+| actual_duration       | 실제 소요 시간                    | INTERVAL     |          |             |        |        |  
+| created_at            | 레코드 생성 시간                  | TIMESTAMP    | Y        |             |        | NOW()  | 
+| created_by            | 레코드 생성자                     | VARCHAR(50)  | Y        |             |        | username |   
+| updated_at            | 레코드 수정 시간                  | TIMESTAMP    | Y        |             |        | NOW()  |   
+| updated_by            | 레코드 수정자                     | VARCHAR(50)  | Y        |             |        | username |  
+| is_deleted            | 레코드 삭제 여부                  | BOOLEAN      | Y        |             |        | FALSE  |
+| deleted_at            | 레코드 삭제 시간                  | TIMESTAMP    |          |             |        |        |    
+| deleted_by            | 레코드 삭제자                     | VARCHAR(50)  |          |             |        |        | 
 
 
 ### p_delivery_manager: 배송 담당자 테이블
@@ -295,5 +297,6 @@ comments: true
 
 ## API
 
-[노션 페이지로 대체합니다.](https://www.notion.so/teamsparta/API-1b32dc3ef5148050be4bf9f74d9da688?pvs=4)
+[노션 페이지로 대체합니다.](https://www.notion.so/teamsparta/API-1b32dc3ef5148050be4bf9f74d9da688?pvs=4)  
+  
 [ERD5](https://zzangkkmin.github.io/assets/files/api-list.pdf)
