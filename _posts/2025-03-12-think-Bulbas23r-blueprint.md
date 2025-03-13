@@ -46,64 +46,68 @@ comments: true
 
 ### p_user: 사용자 테이블
 
-| 컬럼 ID    | 컬럼 설명                                        | 타입 및 길이   | Not null | PK | Unique | 기본값  | 제약조건                                                            |
-|------------|--------------------------------------------------|----------------|----------|-------------|--------|---------|---------------------------------------------------------------------|
-| id         | 사용자 고유 값                                           | UUID           | Y        | Y           | Y      |         |                                                                     |
-| username   | 사용자 아이디 이름                                  | VARCHAR(10)    | Y        |             | Y      |         | 최소 4자 이상, 10자 이하<br>알파벳 소문자(a~z), 숫자(0~9)             |
-| password   | 사용자 비밀번호                                   | VARCHAR(15)    | Y        |             |        |         | 최소 8자 이상, 15자 이하<br>알파벳 대소문자(a~z, A~Z), 숫자(0~9), 특수문자 |
-| slack_id   | 슬랙 아이디                                      | VARCHAR(255)   | Y        |             | Y      |         |                                                                     |
-| role       | 사용자 역할  | role_type      | Y        |             |        |         |      (CUSTOMER, HUB, DELIVERY, COMPANY, MASTER)|
-| created_at | 레코드 생성 시간                                 | TIMESTAMP      | Y        |             |        | NOW()   |                                                                     |
-| created_by | 레코드 생성자                           | VARCHAR(100)   | Y        |             | Y      | username|                                                                     |
-| updated_at | 레코드 수정 시간                                 | TIMESTAMP      | Y        |             |        | NOW()   |                                                                     |
-| updated_by | 레코드 수정자                           | VARCHAR(100)   | Y        |             |        | username|                                                                     |
-| is_deleted | 레코드 삭제 여부                                 | BOOLEAN        | Y        |             |        | false   |                                                                     |
-| deleted_at | 레코드 삭제 시간                                 | TIMESTAMP      |          |             |        |         |                                                                     |
-| deleted_by | 레코드 삭제자                           | VARCHAR(100)   |          |             |        |         |                                                                     |
+| 컬럼 ID    | 컬럼 설명  | 타입 및 길이   | Not null | PK | Unique | 기본값  | 제약조건   |
+|------------|-----------|----------------|----------|---|--------|---------|------=----|
+| id         | 사용자 고유 값    | UUID           | Y   | Y           | Y      |         | 
+| username   | 사용자 아이디 이름 | VARCHAR(10)    | Y   |             | Y      |         |  
+| password   | 사용자 비밀번호    | VARCHAR(15)    | Y   |             |        |         | 
+| slack_id   | 슬랙 아이디       | VARCHAR(255)   | Y   |             | Y      |         |     
+| role       | 사용자 역할       | role_type      | Y    |             |        |         |   
+| created_at | 레코드 생성 시간   | TIMESTAMP      | Y   |             |        | NOW()   |        
+| created_by | 레코드 생성자     | VARCHAR(100)   | Y    |             | Y      | username|  
+| updated_at | 레코드 수정 시간  | TIMESTAMP      | Y  |             |        | NOW()   |  
+| updated_by | 레코드 수정자    | VARCHAR(100)   | Y   |             |        | username|   
+| is_deleted | 레코드 삭제 여부 | BOOLEAN        | Y  |             |        | false   |   
+| deleted_at | 레코드 삭제 시간  | TIMESTAMP      |   |             |        |         |   
+| deleted_by | 레코드 삭제자     | VARCHAR(100)   |   |             |        |         |   
+
+- username: 최소 4자 이상, 10자 이하 알파벳 소문자(a~z), 숫자(0~9)
+- password: 최소 8자 이상, 15자 이하<br>알파벳 대소문자(a~z, A~Z), 숫자(0~9), 특수문자
+- role: (CUSTOMER, HUB, DELIVERY, COMPANY, MASTER)
 
 ### p_company: 업체 테이블
 
-| 컬럼 ID     | 컬럼 설명                     | 타입 및 길이  | Not null | PK | Unique | 기본값   | 제약조건 |
-|-------------|-------------------------------|---------------|----------|-------------|--------|----------|----------|
-| id          | 업체 ID                       | UUID          | Y        | Y           |        |          |          |
-| hub_id      | 업체 허브 ID                  | UUID          | Y        |             |        |          |          |
-| manager_id  | 업체 담당자                   | UUID          | Y        |             |        |          |          |
-| name        | 업체 이름                     | VARCHAR(255)  | Y        |             |        |          |          |
-| type        | 업체 종류                     | ENUM          | Y        |             |        |          |          |
-| phone       | 업체 번호                     | VARCHAR(20)   | Y        |             |        |          |          |
-| road_address| 도로명 주소                   | VARCHAR(500)  | Y        |             |        |          |          |
-| jibun_address| 지번 주소                    | VARCHAR(500)  | Y        |             |        |          |          |
-| city        | 시                            | VARCHAR(255)  | Y        |             |        |          |          |
-| district    | 구/군                         | VARCHAR(255)  | Y        |             |        |          |          |
-| town        | 읍/면/동                      | VARCHAR(255)  | Y        |             |        |          |          |
-| postal_code | 우편 번호                     | VARCHAR(255)  | Y        |             |        |          |          |
-| updated_by  | 레코드 수정자       | VARCHAR(50)   | Y        |             |        | username |          |
-| is_deleted  | 레코드 삭제 여부              | BOOLEAN       | Y        |             |        | FALSE    |          |
-| deleted_at  | 레코드 삭제 시간              | TIMESTAMP     |          |             |        |          |          |
-| deleted_by  | 레코드 삭제자       | VARCHAR(50)   |          |             |        |          |          |
+| 컬럼 ID     | 컬럼 설명                     | 타입 및 길이  | Not null | PK | Unique | 기본값   | 
+|-------------|-------------------------------|---------------|----------|----|--------|----------|
+| id          | 업체 ID                       | UUID          | Y        | Y  |        |          | 
+| hub_id      | 업체 허브 ID                  | UUID          | Y        |    |        |          | 
+| manager_id  | 업체 담당자                   | UUID          | Y        |   |        |          |  
+| name        | 업체 이름                     | VARCHAR(255)  | Y        |    |        |          |   
+| type        | 업체 종류                     | ENUM          | Y        |    |        |          |   
+| phone       | 업체 번호                     | VARCHAR(20)   | Y        |    |        |          |     
+| road_address| 도로명 주소                   | VARCHAR(500)  | Y        |    |        |          |    
+| jibun_address| 지번 주소                    | VARCHAR(500)  | Y        |    |        |          |   
+| city        | 시                            | VARCHAR(255)  | Y        |   |        |          |  
+| district    | 구/군                         | VARCHAR(255)  | Y        |   |        |          |   
+| town        | 읍/면/동                      | VARCHAR(255)  | Y        |   |        |          | 
+| postal_code | 우편 번호                     | VARCHAR(255)  | Y        |   |        |          |  
+| updated_by  | 레코드 수정자                  | VARCHAR(50)   | Y        |   |        | username |   
+| is_deleted  | 레코드 삭제 여부              | BOOLEAN       | Y        |    |        | FALSE    |   
+| deleted_at  | 레코드 삭제 시간              | TIMESTAMP     |          |    |        |          |  
+| deleted_by  | 레코드 삭제자                 | VARCHAR(50)   |          |    |        |          |   
 
 ### p_hub: 허브 테이블
 
-| 컬럼 ID      | 컬럼 설명                    | 타입 및 길이   | Not null | PK | Unique | 기본값 | 제약조건 |
-|--------------|------------------------------|----------------|----------|-------------|--------|--------|----------|
-| id           | 허브 ID                      | UUID           | Y        | Y           |        |        |          |
-| name         | 허브 이름                    | VARCHAR(255)   | Y        |             | Y      |        |          |
-| manager_id   | 허브 관리자 ID               | INTEGER        |          |             |        |        |          |
-| road_address | 도로명 주소                  | VARCHAR(500)   | Y        |             |        |        |          |
-| jibun_address| 지번 주소                    | VARCHAR(500)   | Y        |             |        |        |          |
-| city         | 시                           | VARCHAR(255)   | Y        |             |        |        |          |
-| district     | 구/군                        | VARCHAR(255)   | Y        |             |        |        |          |
-| town         | 읍/면/동                     | VARCHAR(255)   | Y        |             |        |        |          |
-| postal_code  | 우편 번호                    | VARCHAR(255)   | Y        |             |        |        |          |
-| latitude     | 위도                         | NUMERIC(9,6)   | Y        |             |        |        |          |
-| longitude    | 경도                         | NUMERIC(9,6)   | Y        |             |        |        |          |
-| created_at   | 레코드 생성 시간             | TIMESTAMP      | Y        |             |        | NOW()  |          |
-| created_by   | 레코드 생성자      | VARCHAR(50)    | Y        |             |        |        |          |
-| updated_at   | 레코드 수정 시간             | TIMESTAMP      | Y        |             |        | NOW()  |          |
-| updated_by   | 레코드 수정자      | VARCHAR(50)    | Y        |             |        |        |          |
-| is_deleted   | 레코드 삭제 여부             | BOOLEAN        | Y        |             |        | FALSE  |          |
-| deleted_at   | 레코드 삭제 시간             | TIMESTAMP      |          |             |        |        |          |
-| deleted_by   | 레코드 삭제자      | VARCHAR(50)    |          |             |        |        |          |
+| 컬럼 ID      | 컬럼 설명                    | 타입 및 길이   | Not null | PK | Unique | 기본값 | 
+|--------------|------------------------------|----------------|----------|-------------|--------|--------|
+| id           | 허브 ID                      | UUID           | Y        | Y           |        |        | 
+| name         | 허브 이름                    | VARCHAR(255)   | Y        |             | Y      |        |  
+| manager_id   | 허브 관리자 ID               | INTEGER        |          |             |        |        | 
+| road_address | 도로명 주소                  | VARCHAR(500)   | Y        |             |        |        |  
+| jibun_address| 지번 주소                    | VARCHAR(500)   | Y        |             |        |        |
+| city         | 시                           | VARCHAR(255)   | Y        |             |        |        | 
+| district     | 구/군                        | VARCHAR(255)   | Y        |             |        |        | 
+| town         | 읍/면/동                     | VARCHAR(255)   | Y        |             |        |        | 
+| postal_code  | 우편 번호                    | VARCHAR(255)   | Y        |             |        |        | 
+| latitude     | 위도                         | NUMERIC(9,6)   | Y        |             |        |        |  
+| longitude    | 경도                         | NUMERIC(9,6)   | Y        |             |        |        | 
+| created_at   | 레코드 생성 시간             | TIMESTAMP      | Y        |             |        | NOW()  |  
+| created_by   | 레코드 생성자                | VARCHAR(50)    | Y        |             |        |        |      
+| updated_at   | 레코드 수정 시간             | TIMESTAMP      | Y        |             |        | NOW()  |    
+| updated_by   | 레코드 수정자                | VARCHAR(50)    | Y        |             |        |        |   
+| is_deleted   | 레코드 삭제 여부             | BOOLEAN        | Y        |             |        | FALSE  |  
+| deleted_at   | 레코드 삭제 시간             | TIMESTAMP      |          |             |        |        |  
+| deleted_by   | 레코드 삭제자                | VARCHAR(50)    |          |             |        |        |   
 
 ### p_hub_transit_info: 허브 이동 경로 테이블
 
@@ -289,6 +293,7 @@ comments: true
 | deleted_by | 레코드 삭제자          | VARCHAR(50)  |          |             |        |        |          |
 
 
-
 ## API
 
+[노션 페이지로 대체합니다.](https://www.notion.so/teamsparta/API-1b32dc3ef5148050be4bf9f74d9da688?pvs=4)
+[ERD5](https://zzangkkmin.github.io/assets/files/api-list.pdf)
