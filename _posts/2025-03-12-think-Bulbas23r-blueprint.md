@@ -35,7 +35,12 @@ comments: true
 
 ## ERD
 
-일단 다 정리되면 업로드
+![ERD](https://zzangkkmin.github.io/assets/img/postImages/2025-03-12-ERD.png)
+![ERD1](https://zzangkkmin.github.io/assets/img/postImages/2025-03-12-ERD1.png)
+![ERD2](https://zzangkkmin.github.io/assets/img/postImages/2025-03-12-ERD2.png)
+![ERD3](https://zzangkkmin.github.io/assets/img/postImages/2025-03-12-ERD3.png)
+![ERD4](https://zzangkkmin.github.io/assets/img/postImages/2025-03-12-ERD4.png)
+![ERD5](https://zzangkkmin.github.io/assets/img/postImages/2025-03-12-ERD5.png)
 
 ## DB 테이블
 
@@ -49,12 +54,12 @@ comments: true
 | slack_id   | 슬랙 아이디                                      | VARCHAR(255)   | Y        |             | Y      |         |                                                                     |
 | role       | 사용자 역할  | role_type      | Y        |             |        |         |      (CUSTOMER, HUB, DELIVERY, COMPANY, MASTER)|
 | created_at | 레코드 생성 시간                                 | TIMESTAMP      | Y        |             |        | NOW()   |                                                                     |
-| created_by | 레코드 생성자 (username)                          | VARCHAR(100)   | Y        |             | Y      | username|                                                                     |
+| created_by | 레코드 생성자                           | VARCHAR(100)   | Y        |             | Y      | username|                                                                     |
 | updated_at | 레코드 수정 시간                                 | TIMESTAMP      | Y        |             |        | NOW()   |                                                                     |
-| updated_by | 레코드 수정자 (username)                          | VARCHAR(100)   | Y        |             |        | username|                                                                     |
+| updated_by | 레코드 수정자                           | VARCHAR(100)   | Y        |             |        | username|                                                                     |
 | is_deleted | 레코드 삭제 여부                                 | BOOLEAN        | Y        |             |        | false   |                                                                     |
 | deleted_at | 레코드 삭제 시간                                 | TIMESTAMP      |          |             |        |         |                                                                     |
-| deleted_by | 레코드 삭제자 (username)                          | VARCHAR(100)   |          |             |        |         |                                                                     |
+| deleted_by | 레코드 삭제자                           | VARCHAR(100)   |          |             |        |         |                                                                     |
 
 ### p_company: 업체 테이블
 
@@ -72,10 +77,10 @@ comments: true
 | district    | 구/군                         | VARCHAR(255)  | Y        |             |        |          |          |
 | town        | 읍/면/동                      | VARCHAR(255)  | Y        |             |        |          |          |
 | postal_code | 우편 번호                     | VARCHAR(255)  | Y        |             |        |          |          |
-| updated_by  | 레코드 수정자 (username)      | VARCHAR(50)   | Y        |             |        | username |          |
+| updated_by  | 레코드 수정자       | VARCHAR(50)   | Y        |             |        | username |          |
 | is_deleted  | 레코드 삭제 여부              | BOOLEAN       | Y        |             |        | FALSE    |          |
 | deleted_at  | 레코드 삭제 시간              | TIMESTAMP     |          |             |        |          |          |
-| deleted_by  | 레코드 삭제자 (username)      | VARCHAR(50)   |          |             |        |          |          |
+| deleted_by  | 레코드 삭제자       | VARCHAR(50)   |          |             |        |          |          |
 
 ### p_hub: 허브 테이블
 
@@ -93,12 +98,12 @@ comments: true
 | latitude     | 위도                         | NUMERIC(9,6)   | Y        |             |        |        |          |
 | longitude    | 경도                         | NUMERIC(9,6)   | Y        |             |        |        |          |
 | created_at   | 레코드 생성 시간             | TIMESTAMP      | Y        |             |        | NOW()  |          |
-| created_by   | 레코드 생성자 (username)     | VARCHAR(50)    | Y        |             |        |        |          |
+| created_by   | 레코드 생성자      | VARCHAR(50)    | Y        |             |        |        |          |
 | updated_at   | 레코드 수정 시간             | TIMESTAMP      | Y        |             |        | NOW()  |          |
-| updated_by   | 레코드 수정자 (username)     | VARCHAR(50)    | Y        |             |        |        |          |
+| updated_by   | 레코드 수정자      | VARCHAR(50)    | Y        |             |        |        |          |
 | is_deleted   | 레코드 삭제 여부             | BOOLEAN        | Y        |             |        | FALSE  |          |
 | deleted_at   | 레코드 삭제 시간             | TIMESTAMP      |          |             |        |        |          |
-| deleted_by   | 레코드 삭제자 (username)     | VARCHAR(50)    |          |             |        |        |          |
+| deleted_by   | 레코드 삭제자      | VARCHAR(50)    |          |             |        |        |          |
 
 ### p_hub_transit_info: 허브 이동 경로 테이블
 
@@ -109,12 +114,12 @@ comments: true
 | transit_time       | 소요 시간(분)               | INTEGER      | Y        |             |        |        |          |
 | transit_distance   | 이동 거리(미터)              | INTEGER      | Y        |             |        |        |          |
 | created_at         | 레코드 생성일자             | TIMESTAMP    | Y        |             |        | NOW()  |          |
-| created_by         | 레코드 생성자 (username)    | VARCHAR(50)  | Y        |             |        |        |          |
+| created_by         | 레코드 생성자     | VARCHAR(50)  | Y        |             |        |        |          |
 | updated_at         | 레코드 수정일자             | TIMESTAMP    | Y        |             |        | NOW()  |          |
-| updated_by         | 레코드 수정자 (username)    | VARCHAR(50)  | Y        |             |        |        |          |
+| updated_by         | 레코드 수정자     | VARCHAR(50)  | Y        |             |        |        |          |
 | is_deleted         | 레코드 삭제 여부             | BOOLEAN      | Y        |             |        | FALSE  |          |
 | deleted_at         | 레코드 삭제일자             | TIMESTAMP    |          |             |        |        |          |
-| deleted_by         | 레코드 삭제자 (username)     | VARCHAR(50)  |          |             |        |        |          |
+| deleted_by         | 레코드 삭제자      | VARCHAR(50)  |          |             |        |        |          |
 
 ### p_hub_stock: 허브 상품 재고 테이블
 
@@ -124,12 +129,12 @@ comments: true
 | item_id    | 상품 ID                     | UUID         | Y        | Y           |        |        |          |
 | quantity   | 재고 수량                   | INTEGER      | Y        |             |        |        |          |
 | created_at | 레코드 생성일자             | TIMESTAMP    | Y        |             |        | NOW()  |          |
-| created_by | 레코드 생성자 (username)    | VARCHAR(50)  | Y        |             |        |        |          |
+| created_by | 레코드 생성자     | VARCHAR(50)  | Y        |             |        |        |          |
 | updated_at | 레코드 수정일자             | TIMESTAMP    | Y        |             |        | NOW()  |          |
-| updated_by | 레코드 수정자 (username)    | VARCHAR(50)  | Y        |             |        |        |          |
+| updated_by | 레코드 수정자     | VARCHAR(50)  | Y        |             |        |        |          |
 | is_deleted | 레코드 삭제 여부             | BOOLEAN      | Y        |             |        | FALSE  |          |
 | deleted_at | 레코드 삭제일자             | TIMESTAMP    |          |             |        |        |          |
-| deleted_by | 레코드 삭제자 (username)     | VARCHAR(50)  |          |             |        |        |          |
+| deleted_by | 레코드 삭제자      | VARCHAR(50)  |          |             |        |        |          |
 
 
 ### p_product: 상품 테이블
@@ -143,48 +148,48 @@ comments: true
 | price      | 상품 가격                     | DECIMAL(10,2)  | Y        |             |        |         |          |
 | decription | 상품 설명                     | TEXT           |          |             |        |         |          |
 | created_at | 레코드 생성 시간              | TIMESTAMP      | Y        |             |        | NOW()   |          |
-| created_by | 레코드 생성자 (username)      | VARCHAR(50)    | Y        |             |        | username|          |
+| created_by | 레코드 생성자       | VARCHAR(50)    | Y        |             |        | username|          |
 | updated_at | 레코드 수정 시간              | TIMESTAMP      | Y        |             |        | NOW()   |          |
-| updated_by | 레코드 수정자 (username)      | VARCHAR(50)    | Y        |             |        | username|          |
+| updated_by | 레코드 수정자       | VARCHAR(50)    | Y        |             |        | username|          |
 | is_deleted | 레코드 삭제 여부              | BOOLEAN        | Y        |             |        | false   |          |
 | deleted_at | 레코드 삭제 시간              | TIMESTAMP      |          |             |        |         |          |
-| deleted_by | 레코드 삭제자 (username)      | VARCHAR(50)    |          |             |        |         |          |
+| deleted_by | 레코드 삭제자       | VARCHAR(50)    |          |             |        |         |          |
 
 
 ### p_order: 주문 테이블
 
-| 컬럼 ID               | 컬럼 설명               | 타입 및 길이  | Not null | PK | Unique | Foreign Key | 연관 관계    | 기본값 | 제약조건 |
-|-----------------------|-------------------------|---------------|----------|-------------|--------|-------------|--------------|--------|----------|
-| id                    | 주문 아이디             | UUID          | Y        | Y           | Y      |             |              |        |          |
-| provide_company_id    | 공급 업체 아이디        | UUID          | Y        |             | Y      | Y           | p.company.id |        |          |
-| recieve_company_id    | 수령 업체 아이디        | UUID          | Y        |             | Y      | Y           | p.company.id |        |          |
-| created_at            | 레코드 생성 시간        | TIMESTAMP     | Y        |             |        |             |              | NOW()  |          |
-| created_by            | 레코드 생성자 (username)| VARCHAR(100)  | Y        |             | Y      |             |              | username |        |
-| updated_at            | 레코드 수정 시간        | TIMESTAMP     | Y        |             |        |             |              | NOW()  |          |
-| updated_by            | 레코드 수정자 (username)| VARCHAR(100)  | Y        |             |        |             |              | username |        |
-| is_deleted            | 레코드 삭제 여부        | BOOLEAN       | Y        |             |        |             |              | false  |          |
-| deleted_at            | 레코드 삭제 시간        | TIMESTAMP     |          |             |        |             |              |        |          |
-| deleted_by            | 레코드 삭제자 (username)| VARCHAR(100)  |          |             |        |             |              |        |          |
+| 컬럼 ID               | 컬럼 설명               | 타입 및 길이  | Not null | PK | Unique | 기본값 | 제약조건 |
+|-----------------------|-------------------------|--------------|----------|----|-------|--------|----------|
+| id                    | 주문 아이디             | UUID          | Y        | Y  | Y     |         |          |
+| provide_company_id    | 공급 업체 아이디        | UUID          | Y        |    | Y      |        |          |
+| recieve_company_id    | 수령 업체 아이디        | UUID          | Y        |    | Y      |         |          |
+| created_at            | 레코드 생성 시간        | TIMESTAMP     | Y        |    |        | NOW()  |          |
+| created_by            | 레코드 생성자 | VARCHAR(100)  | Y        |    | Y      | username |        |
+| updated_at            | 레코드 수정 시간        | TIMESTAMP     | Y        |    |        |  NOW()  |          |
+| updated_by            | 레코드 수정자 | VARCHAR(100)  | Y        |    |        | username |        |
+| is_deleted            | 레코드 삭제 여부        | BOOLEAN       | Y        |    |        |  false  |          |
+| deleted_at            | 레코드 삭제 시간        | TIMESTAMP     |          |    |        |          |          |
+| deleted_by            | 레코드 삭제자 | VARCHAR(100)  |          |    |        |         |          |
 
 
 ### p_order_product: 주문 상세조회 테이블
 
-| 컬럼 ID      | 컬럼 설명                     | 타입 및 길이   | Not null | PK | Unique | Foreign Key | 연관 관계     | 기본값 | 제약조건 |
-|--------------|-------------------------------|----------------|----------|-------------|--------|-------------|---------------|--------|----------|
-| id           | 주문 상세 ID                  | UUID           | Y        | Y           |        |             |               |        |          |
-| order_id     | 주문 ID                       | UUID           | Y        |             |        | Y           | p_order.id    |        |          |
-| hub_id       | 허브 ID                       | UUID           | Y        |             | Y      |             |               |        |          |
-| product_id   | 상품 ID                       | UUID           | Y        |             | Y      | Y           | p.product.id  |        |          |
-| product_name | 상품명                        | UUID           | Y        |             |        |             |               |        |          |
-| quantity     | 수량                          | INT            | Y        |             |        |             |               |        |          |
-| price        | 가격                          | DECIMAL(10,2)  | Y        |             |        |             |               |        |          |
-| created_at   | 레코드 생성 시간              | TIMESTAMP      | Y        |             |        |             |               | now()  |          |
-| created_by   | 레코드 생성자 (username)      | VARCHAR(50)    | Y        |             |        |             |               | username |        |
-| updated_at   | 레코드 수정 시간              | TIMESTAMP      | Y        |             |        |             |               | now()  |          |
-| updated_by   | 레코드 수정자 (username)      | VARCHAR(50)    | Y        |             |        |             |               | username |        |
-| is_deleted   | 레코드 삭제 여부              | BOOLEAN        | Y        |             |        |             |               | false  |          |
-| deleted_at   | 레코드 삭제 시간              | TIMESTAMP      |          |             |        |             |               |        |          |
-| deleted_by   | 레코드 삭제자 (username)      | VARCHAR(50)    |          |             |        |             |               |        |          |
+| 컬럼 ID      | 컬럼 설명                     | 타입 및 길이   | Not null | PK | Unique | 기본값 | 제약조건 |
+|--------------|------------------------------|---------------|----------|----|--------|---------|----------|
+| id           | 주문 상세 ID                  | UUID           | Y        | Y |        |         |          |
+| order_id     | 주문 ID                       | UUID           | Y        |   |        |         |          |
+| hub_id       | 허브 ID                       | UUID           | Y        |   | Y      |         |          |
+| product_id   | 상품 ID                       | UUID           | Y        |   | Y      |         |          |
+| product_name | 상품명                        | UUID           | Y        |   |        |         |          |
+| quantity     | 수량                          | INT            | Y        |   |        |         |          |
+| price        | 가격                          | DECIMAL(10,2)  | Y        |   |        |         |          |
+| created_at   | 레코드 생성 시간              | TIMESTAMP      | Y         |   |        |  now()  |          |
+| created_by   | 레코드 생성자       | VARCHAR(50)    | Y        |    |        | username |         |
+| updated_at   | 레코드 수정 시간              | TIMESTAMP      | Y        |    |        |   now()  |         |
+| updated_by   | 레코드 수정자       | VARCHAR(50)    | Y        |   |        | username |         |
+| is_deleted   | 레코드 삭제 여부              | BOOLEAN        | Y        |   |        |  false  |          |
+| deleted_at   | 레코드 삭제 시간              | TIMESTAMP      |          |   |        |         |          |
+| deleted_by   | 레코드 삭제자       | VARCHAR(50)    |          |   |        |         |          |
 
 
 ### p_delivery: 배송 테이블
@@ -193,7 +198,6 @@ comments: true
 |-----------------------|------------------------------|--------------|----------|-------------|--------|--------|----------|
 | id                    | 배송 ID                      | UUID         | Y        | Y           | Y      |        |          |
 | order_id              | 주문 ID                      | UUID         | Y        |             |        |        |          |
-| manager_id            | 배송 담당자                  | UUID         |          |             |        |        |          |
 | start_hub_id          | 출발 허브 ID                 | UUID         | Y        |             |        |        |          |
 | end_hub_id            | 도착 허브 ID                 | UUID         | Y        |             |        |        |          |
 | deliver_manager_id    | 업체 배송 담당자 ID          | UUID         | Y        |             |        |        |          |
@@ -201,12 +205,12 @@ comments: true
 | receiver_company_id   | 수령 업체 ID                 | UUID         | Y        |             |        |        |          |
 | receiver_company_slack_id | 수령 업체 슬랙 ID         | UUID         |          |             |        |        |          |
 | created_at            | 레코드 생성 시간             | TIMESTAMP    | Y        |             |        | NOW()  |          |
-| created_by            | 레코드 생성자 (username)     | VARCHAR(50)  | Y        |             |        | username |        |
+| created_by            | 레코드 생성자      | VARCHAR(50)  | Y        |             |        | username |        |
 | updated_at            | 레코드 수정 시간             | TIMESTAMP    | Y        |             |        | NOW()  |          |
-| updated_by            | 레코드 수정자 (username)     | VARCHAR(50)  | Y        |             |        | username |        |
+| updated_by            | 레코드 수정자      | VARCHAR(50)  | Y        |             |        | username |        |
 | is_deleted            | 레코드 삭제 여부             | BOOLEAN      | Y        |             |        | FALSE  |          |
 | deleted_at            | 레코드 삭제 시간             | TIMESTAMP    |          |             |        |        |          |
-| deleted_by            | 레코드 삭제자 (username)     | VARCHAR(50)  |          |             |        |        |          |
+| deleted_by            | 레코드 삭제자      | VARCHAR(50)  |          |             |        |        |          |
 
 
 ### p_delivery_path: 배송 경로 테이블
@@ -226,12 +230,12 @@ comments: true
 | actual_distance       | 실제 거리                         | NUMERIC      |          |             |        |        |          |
 | actual_duration       | 실제 소요 시간                    | INTERVAL     |          |             |        |        |          |
 | created_at            | 레코드 생성 시간                  | TIMESTAMP    | Y        |             |        | NOW()  |          |
-| created_by            | 레코드 생성자 (username)          | VARCHAR(50)  | Y        |             |        | username |        |
+| created_by            | 레코드 생성자           | VARCHAR(50)  | Y        |             |        | username |        |
 | updated_at            | 레코드 수정 시간                  | TIMESTAMP    | Y        |             |        | NOW()  |          |
-| updated_by            | 레코드 수정자 (username)          | VARCHAR(50)  | Y        |             |        | username |        |
+| updated_by            | 레코드 수정자           | VARCHAR(50)  | Y        |             |        | username |        |
 | is_deleted            | 레코드 삭제 여부                  | BOOLEAN      | Y        |             |        | FALSE  |          |
 | deleted_at            | 레코드 삭제 시간                  | TIMESTAMP    |          |             |        |        |          |
-| deleted_by            | 레코드 삭제자 (username)          | VARCHAR(50)  |          |             |        |        |          |
+| deleted_by            | 레코드 삭제자           | VARCHAR(50)  |          |             |        |        |          |
 
 
 ### p_delivery_manager: 배송 담당자 테이블
@@ -244,12 +248,12 @@ comments: true
 | type       | 배송 담당자 타입              | delivery_manager_type | Y  |             |        |        |          |
 | sequence   | 배송 순서                     | INTEGER         | Y        |             |        |        |          |
 | created_at | 레코드 생성일자               | TIMESTAMP       | Y        |             |        | NOW()  |          |
-| created_by | 레코드 생성자 (username)       | VARCHAR(50)     | Y        |             |        | username |        |
+| created_by | 레코드 생성자        | VARCHAR(50)     | Y        |             |        | username |        |
 | updated_at | 레코드 수정일자               | TIMESTAMP       | Y        |             |        | NOW()  |          |
-| updated_by | 레코드 수정자 (username)       | VARCHAR(50)     | Y        |             |        | username |        |
+| updated_by | 레코드 수정자        | VARCHAR(50)     | Y        |             |        | username |        |
 | is_deleted | 레코드 삭제 여부              | BOOLEAN         | Y        |             |        | FALSE  |          |
 | deleted_at | 레코드 삭제일자               | TIMESTAMP       |          |             |        |        |          |
-| deleted_by | 레코드 삭제자 (username)       | VARCHAR(50)     |          |             |        |        |          |
+| deleted_by | 레코드 삭제자        | VARCHAR(50)     |          |             |        |        |          |
 
 
 ### p_slack_message: 슬랙 메세지 테이블
@@ -262,12 +266,12 @@ comments: true
 | message    | 메세지 내용                        | TEXT         | Y        |             |        |        |          |
 | delivery_time | 발송 시간                      | TIMESTAMP    | Y        |             |        |        |          |
 | created_at | 레코드 생성일자                    | TIMESTAMP    | Y        |             |        | NOW()  |          |
-| created_by | 레코드 생성자 (username)           | VARCHAR(50)  | Y        |             |        | username |        |
+| created_by | 레코드 생성자            | VARCHAR(50)  | Y        |             |        | username |        |
 | updated_at | 레코드 수정일자                    | TIMESTAMP    | Y        |             |        | NOW()  |          |
-| updated_by | 레코드 수정자 (username)           | VARCHAR(50)  | Y        |             |        | username |        |
+| updated_by | 레코드 수정자            | VARCHAR(50)  | Y        |             |        | username |        |
 | is_deleted | 레코드 삭제 여부                   | BOOLEAN      | Y        |             |        | false  |          |
 | deleted_at | 레코드 삭제일자                    | TIMESTAMP    |          |             |        |        |          |
-| deleted_by | 레코드 삭제자 (username)           | VARCHAR(50)  |          |             |        |        |          |
+| deleted_by | 레코드 삭제자            | VARCHAR(50)  |          |             |        |        |          |
 
 ### p_ai_log: AI 사용 기록 테이블
 
@@ -277,16 +281,14 @@ comments: true
 | request    | AI 요청                         | TEXT         | Y        |             |        |        |          |
 | response   | AI 응답                         | TEXT         | Y        |             |        |        |          |
 | created_at | 레코드 생성일자                 | TIMESTAMP    | Y        |             |        | NOW()  |          |
-| created_by | 레코드 생성자 (username)         | VARCHAR(50)  | Y        |             |        | username |        |
+| created_by | 레코드 생성자          | VARCHAR(50)  | Y        |             |        | username |        |
 | updated_at | 레코드 수정일자                 | TIMESTAMP    | Y        |             |        | NOW()  |          |
-| updated_by | 레코드 수정자 (username)         | VARCHAR(50)  | Y        |             |        | username |        |
+| updated_by | 레코드 수정자          | VARCHAR(50)  | Y        |             |        | username |        |
 | is_deleted | 레코드 삭제 여부                | BOOLEAN      | Y        |             |        | false  |          |
 | deleted_at | 레코드 삭제일자                 | TIMESTAMP    |          |             |        |        |          |
-| deleted_by | 레코드 삭제자 (username)         | VARCHAR(50)  |          |             |        |        |          |
-
+| deleted_by | 레코드 삭제자          | VARCHAR(50)  |          |             |        |        |          |
 
 
 
 ## API
 
-일단 다 정리되면 업로드
